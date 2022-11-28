@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sreality scraper</title>
+    <style>
+        nav a {
+            color: #c00;
+            font-size: 3em;
+            margin-left: 50px;
+            text-decoration: none;
+        }
+
+        .estate {
+            padding: 20px;
+            margin: 10px;
+            background-color: #f7f4f4;
+        }
+
+        .title {
+            color: #c00;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('index') }}">Sreality scraper</a>
+    </nav>
+    <hr>
+    <div class="content">
+        {% for estate in estates %}
+        <div class='estate'>
+            <img src="{{ estate[2] }}">
+            <h3 class="title">{{ estate[1] }}</h3>
+        </div>
+    {% endfor %}
+    </div>
+</body>
+</html>
